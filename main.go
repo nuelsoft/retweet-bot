@@ -10,6 +10,7 @@ import (
 	twitter3 "github.com/dghubble/oauth1/twitter"
 	"log"
 	"net/http"
+	"os"
 )
 
 var (
@@ -48,7 +49,8 @@ func success() http.Handler {
 }
 
 func main() {
-
+	utils.ConsumerKey = os.Getenv("ConsumerKey")
+	utils.ConsumerSecret = os.Getenv("ConsumerSecret")
 	mux := http.NewServeMux()
 	mux.Handle("/retweet-all", twitter2.LoginHandler(config, nil))
 	mux.Handle("/callback", twitter2.CallbackHandler(config, success(), nil))
