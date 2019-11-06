@@ -1,9 +1,9 @@
 package utils
 
 var (
-	ConsumerSecret = "ANCAOWOnaElrpq7u1omTVnJlbfl7zfB2H2cqLRSYoPwKLEuWrW"
-	ConsumerKey    = "dWdV9gIgvgsZIY3oQdrMAPsMV"
+	ConsumerSecret = "YOUR_CONSUMER_SECRET"
+	ConsumerKey    = "YOUR_CONSUMER_KEY"
 	AccessToken    = ""
 	AccessSecret   = ""
-	Query = "DevFestAba"
+	Query = "YOUR_QUERY"
 )
