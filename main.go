@@ -54,9 +54,9 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
-
-	utils.ConsumerKey = os.Getenv("ConsumerKey")
-	utils.ConsumerSecret = os.Getenv("ConsumerSecret")
+	//
+	//utils.ConsumerKey = os.Getenv("ConsumerKey")
+	//utils.ConsumerSecret = os.Getenv("ConsumerSecret")
 
 	mux := http.NewServeMux()
 	mux.Handle("/retweet-all", twitter2.LoginHandler(config, nil))
