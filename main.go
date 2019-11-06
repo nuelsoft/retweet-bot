@@ -56,7 +56,7 @@ func main() {
 	//
 	//srv := &http.Server{Handler: mux, Addr: ":7070", ReadTimeout: 20 * time.Second, WriteTimeout: 20 * time.Second}
 
-	log.Fatal(http.ListenAndServe(":6060", mux))
+	log.Fatal(http.ListenAndServe(":8000", mux))
 
 	//if err := srv.ListenAndServe(); err != nil {
 	//	log.Fatalf("couldn't start server %s", err.Error())
