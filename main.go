@@ -12,6 +12,7 @@ import (
 	"net/http"
 	"os"
 )
+const defaultPort = "9090"
 
 var (
 	config = &oauth1.Config{ConsumerKey: utils.ConsumerKey, ConsumerSecret: utils.ConsumerSecret,
@@ -49,8 +50,14 @@ func success() http.Handler {
 }
 
 func main() {
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = defaultPort
+	}
+
 	utils.ConsumerKey = os.Getenv("ConsumerKey")
 	utils.ConsumerSecret = os.Getenv("ConsumerSecret")
+
 	mux := http.NewServeMux()
 	mux.Handle("/retweet-all", twitter2.LoginHandler(config, nil))
 	mux.Handle("/callback", twitter2.CallbackHandler(config, success(), nil))
@@ -58,7 +65,7 @@ func main() {
 	//
 	//srv := &http.Server{Handler: mux, Addr: ":7070", ReadTimeout: 20 * time.Second, WriteTimeout: 20 * time.Second}
 
-	log.Fatal(http.ListenAndServe(":8000", mux))
+	log.Fatal(http.ListenAndServe(":"+port, mux))
 
 	//if err := srv.ListenAndServe(); err != nil {
 	//	log.Fatalf("couldn't start server %s", err.Error())

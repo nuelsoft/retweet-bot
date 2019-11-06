@@ -2,7 +2,7 @@ package utils
 
 var (
 	ConsumerSecret = ""
-	ConsumerKey    = "s"
+	ConsumerKey    = ""
 	AccessToken    = ""
 	AccessSecret   = ""
 	Query = "DevFestAba"
