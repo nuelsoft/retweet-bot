@@ -55,7 +55,7 @@ func main() {
 	mux.Handle("/callback", twitter2.CallbackHandler(config, success(), nil))
 	mux.Handle("/", twitter2.LoginHandler(config, nil))
 
-	srv := &http.Server{Handler: mux, Addr: "localhost:7070", ReadTimeout: 20 * time.Second, WriteTimeout: 20 * time.Second}
+	srv := &http.Server{Handler: mux, Addr: ":7070", ReadTimeout: 20 * time.Second, WriteTimeout: 20 * time.Second}
 
 	if err := srv.ListenAndServe(); err != nil {
 		log.Fatalf("couldn't start server %s", err.Error())
