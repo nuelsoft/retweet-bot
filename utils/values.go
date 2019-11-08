@@ -5,5 +5,7 @@ var (
 	ConsumerKey    = "dWdV9gIgvgsZIY3oQdrMAPsMV"
 	AccessToken    = ""
 	AccessSecret   = ""
-	Query = "DevFestAba"
+	Query          = "DevFestAba"
+	Count          = "1000000000"
+	BenchID           = "1192891762932629511"
 )
