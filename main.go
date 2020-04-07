@@ -13,7 +13,7 @@ import (
 	"net/url"
 	"os"
 )
-const defaultPort = "9090"
+	const defaultPort = "9090"
 
 var (
 	config = &oauth1.Config{ConsumerKey: utils.ConsumerKey, ConsumerSecret: utils.ConsumerSecret,
