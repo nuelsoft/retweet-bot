@@ -5,5 +5,5 @@ var (
 	ConsumerKey    = "dWdV9gIgvgsZIY3oQdrMAPsMV"
 	AccessToken    = ""
 	AccessSecret   = ""
-	Query = "DevFestAba"
+	Query = "iStandWithPastorchris"
 )
