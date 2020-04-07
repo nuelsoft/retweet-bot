@@ -10,7 +10,6 @@ import (
 	twitter3 "github.com/dghubble/oauth1/twitter"
 	"log"
 	"net/http"
-	"time"
 )
 
 var (
@@ -51,14 +50,16 @@ func success() http.Handler {
 func main() {
 
 	mux := http.NewServeMux()
-	mux.Handle("/retweet-all/{hashtag}", twitter2.LoginHandler(config, nil))
+	mux.Handle("/retweet-all", twitter2.LoginHandler(config, nil))
 	mux.Handle("/callback", twitter2.CallbackHandler(config, success(), nil))
-	mux.Handle("/{hashtag}", twitter2.LoginHandler(config, nil))
+	mux.Handle("/", twitter2.LoginHandler(config, nil))
+	//
+	//srv := &http.Server{Handler: mux, Addr: ":7070", ReadTimeout: 20 * time.Second, WriteTimeout: 20 * time.Second}
 
-	srv := &http.Server{Handler: mux, Addr: "127.0.0.1:8080", ReadTimeout: 20 * time.Second, WriteTimeout: 20 * time.Second}
+	log.Fatal(http.ListenAndServe(":8000", mux))
 
-	if err := srv.ListenAndServe(); err != nil {
-		log.Fatalf("couldn't start server %s", err.Error())
-	}
-
+	//if err := srv.ListenAndServe(); err != nil {
+	//	log.Fatalf("couldn't start server %s", err.Error())
+	//}
+	//
 }
