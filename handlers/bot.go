@@ -19,7 +19,7 @@ func Bot() http.Handler {
 			AccessToken    = ""
 			AccessSecret   = ""
 			QueryString = os.Getenv("QueryString")
-			Count = 100000000
+			Count = 1000
 
 		)
 
