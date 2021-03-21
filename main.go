@@ -4,7 +4,6 @@ import (
 	twitter "github.com/dghubble/gologin/twitter"
 	oauth "github.com/dghubble/oauth1"
 	twitterAuthorization "github.com/dghubble/oauth1/twitter"
-	"github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"os"
@@ -15,11 +14,11 @@ const defaultPort = "9090"
 
 func main() {
 
-	err := godotenv.Load()
+	//err := godotenv.Load()
 
-	if err != nil {
-		log.Fatal(err)
-	}
+	//if err != nil {
+	//	log.Fatal(err)
+	//}
 
 	var (
 		ConsumerKey    = os.Getenv("ConsumerKey")
