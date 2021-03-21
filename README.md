@@ -13,7 +13,7 @@ Method `GET`
 
 #### `/with?tag=<TAG>`
 > Allows you to set the tag to listen for, and immediately launches the retweet sequence with specified `<TAG>`
->
+> Example <a href="https://ntweeter.herokuapp.com/with?tag=Flutter"> https://ntweeter.herokuapp.com/with?tag=Flutter </a>
 
 
 ### Have Fun 🥂

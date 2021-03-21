@@ -14,12 +14,6 @@ const defaultPort = "9090"
 
 func main() {
 
-	//err := godotenv.Load()
-
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-
 	var (
 		ConsumerKey    = os.Getenv("ConsumerKey")
 		ConsumerSecret = os.Getenv("ConsumerSecret")
