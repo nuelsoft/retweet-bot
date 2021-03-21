@@ -41,6 +41,7 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/retweet", twitter.CallbackHandler(config, handlers.Bot(), nil))
+	mux.Handle("/with", handlers.ModEnv(twitter.LoginHandler(config, nil)))
 	mux.Handle("/", twitter.LoginHandler(config, nil))
 
 	log.Printf("Server listening on port %s", port)
